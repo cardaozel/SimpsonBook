@@ -12,7 +12,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
    @IBOutlet weak var tableView: UITableView!
     
     var mySimpsons = [Simpson]()
-    
+    var chosenSimpson: Simpson?
     
     
     override func viewDidLoad() {
@@ -20,9 +20,6 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         tableView.dataSource = self
         tableView.delegate = self
-    
- 
-    
 
     //Simpson Objetcs
     
@@ -53,5 +50,19 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         return cell
     }
     
-}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        chosenSimpson = mySimpsons[indexPath.row]
+        self.performSegue(withIdentifier: "toDetailVC", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailVC" {
+            let destinationVC = segue.destination as! detailsVC
+                destinationVC.selectedSimpson = chosenSimpson
+            }
+        }
+    }
+    
+
 
