@@ -32,6 +32,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yh2-ck-iuK"/>
                     <connections>
+                        <outlet property="tableView" destination="w5C-2y-qop" id="Q8k-Lr-x7E"/>
                         <segue destination="bBQ-uZ-FlZ" kind="show" identifier="toDetailVC" id="DxQ-3U-6O4"/>
                     </connections>
                 </viewController>
@@ -39,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="1028.2442748091603" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailsVC-->
         <scene sceneID="UnG-QT-HAH">
             <objects>
-                <viewController id="bBQ-uZ-FlZ" sceneMemberID="viewController">
+                <viewController id="bBQ-uZ-FlZ" customClass="detailsVC" customModule="SimpsonBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eQn-iu-2nH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,6 +71,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="FH2-1x-6uV"/>
+                    <connections>
+                        <outlet property="imageView" destination="wzq-VG-KiX" id="eYO-xN-XDi"/>
+                        <outlet property="jobLabel" destination="p9F-fd-lLG" id="6D0-Lh-Oqg"/>
+                        <outlet property="nameLabel" destination="3bf-Gx-bdK" id="xaG-1q-0YS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7c-n1-aBd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
